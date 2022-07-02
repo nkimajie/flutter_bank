@@ -1,6 +1,6 @@
 {
-    "name": "sapa_bank",
-    "short_name": "sapa_bank",
+    "name": "shopping_cart",
+    "short_name": "shopping_cart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
