@@ -3,6 +3,7 @@ class Routes {
   static const String welcome = '/welcome-screen';
   static const String auth = '/auth-screen';
   static const String login = '/login-screen';
+  static const String register = '/register-screen';
   static const String mainPage = '/main-screen';
   static const String topup = '/topup';
   static const String purchaseOrder = '/purchase-order';

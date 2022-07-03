@@ -69,7 +69,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 GestureDetector(
                   onTap: (() => Navigator.pushNamed(
                         context,
-                        Routes.login,
+                        Routes.register,
                       )),
                   child: AppButtons(
                     text: 'CREATE YOUR FREE ACCOUNT',

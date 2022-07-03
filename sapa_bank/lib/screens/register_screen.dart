@@ -1,22 +1,18 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:shopping_cart/constant/app_asset.dart';
 import 'package:shopping_cart/constant/colors.dart';
 import 'package:shopping_cart/core/navigators/navigators.dart';
 import 'package:shopping_cart/widgets/app_buttons.dart';
 import 'package:shopping_cart/widgets/app_text.dart';
 
-class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,19 +39,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: 400,
-                    height: 88,
-                    child: AppTextBold(
-                      text: 'Sign into your Account',
-                      weight: FontWeight.w700,
-                      size: 35,
-                      color: AppColors.primary,
-                    ),
+                  AppTextBold(
+                    text: 'Create Account',
+                    weight: FontWeight.w700,
+                    size: 35,
+                    color: AppColors.primary,
                   ),
                   const Gap(7),
                   AppTextBold(
-                    text: 'Log into your BankMe account',
+                    text: 'Open a BankMe account with a few details.',
                     size: 17,
                     weight: FontWeight.w300,
                     color: AppColors.font,
@@ -156,27 +148,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  const Gap(16),
-                  AppTextBold(
-                    text: 'Have you forgotten your password?,',
-                    size: 15,
-                    weight: FontWeight.w400,
-                    color: AppColors.font,
-                  ),
-                  const Gap(3),
-                  AppTextBold(
-                    text: 'click here to recover it',
-                    size: 15,
-                    weight: FontWeight.w300,
-                    color: AppColors.primary,
-                  ),
                 ],
               ),
             ),
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, Routes.mainPage),
               child: AppButtons(
-                text: 'LOG IN',
+                text: 'CREATE AN ACCOUNT',
                 size: double.maxFinite,
                 color: AppColors.white,
                 backgroundColor: AppColors.primary,
@@ -186,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               children: [
                 AppTextBold(
-                  text: 'Do you not have a BankMe account? ',
+                  text: 'Do you already have a BankMe account? ',
                   size: 15,
                   weight: FontWeight.w300,
                   color: AppColors.font,
@@ -194,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 GestureDetector(
                   onTap: () => Navigator.pushNamed(context, Routes.login),
                   child: AppTextBold(
-                    text: 'Sign up here',
+                    text: 'Sign in here',
                     size: 15,
                     weight: FontWeight.w400,
                     color: AppColors.primary,
