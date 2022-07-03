@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_cart/core/navigators/route_names.dart';
-import 'package:shopping_cart/screens/login_screen.dart';
+import 'package:shopping_cart/screens/auth_screen.dart';
 import 'package:shopping_cart/screens/screens.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -14,6 +14,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(
         routeName: settings.name,
         viewToShow: const WeicomePage(),
+      );
+    case Routes.auth:
+      return _getPageRoute(
+        routeName: settings.name,
+        viewToShow: AuthScreen(),
       );
     case Routes.login:
       return _getPageRoute(

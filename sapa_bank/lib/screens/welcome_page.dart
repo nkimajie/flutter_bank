@@ -58,7 +58,7 @@ class _WeicomePageState extends State<WeicomePage> {
                       GestureDetector(
                         onTap: (() => Navigator.pushNamed(
                               context,
-                              Routes.mainPage,
+                              Routes.auth,
                             )),
                         child: AppText(
                           text: 'SKIP',

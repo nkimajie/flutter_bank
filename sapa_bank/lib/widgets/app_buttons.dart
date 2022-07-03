@@ -30,6 +30,7 @@ class AppButtons extends StatelessWidget {
       height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
+        border: Border.all(width: 0.5, color: borderColor),
         color: backgroundColor,
       ),
       child: isIcon == false
