@@ -14,4 +14,7 @@ class AppColors {
   static const Color font = Color(0xff001533);
   static const Color homeConText = Color(0xff85B7FF);
   static const Color inputBackground = Color(0xff999999);
+  static const Color deposit = Color(0xffD5F6EE);
+  static const Color walletContainer = Color(0xffF5F9FF);
+  static const Color withdraw = Color(0xffFFF1D1);
 }

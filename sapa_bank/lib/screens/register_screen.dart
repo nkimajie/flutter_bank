@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 import 'package:shopping_cart/constant/colors.dart';
 import 'package:shopping_cart/core/navigators/navigators.dart';
 import 'package:shopping_cart/widgets/app_buttons.dart';
 import 'package:shopping_cart/widgets/app_text.dart';
+
+import '../providers/auth.dart';
 
 class RegisterScreen extends StatefulWidget {
   RegisterScreen({Key? key}) : super(key: key);
@@ -13,6 +16,8 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: double.maxFinite,
                     height: 50,
                     child: TextFormField(
-                      // controller: addressController,
+                      controller: _phoneController,
                       style: const TextStyle(
                         color: AppColors.font,
                       ),
@@ -112,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: double.maxFinite,
                     height: 50,
                     child: TextFormField(
-                      // controller: addressController,
+                      controller: _passwordController,
                       style: const TextStyle(
                         color: AppColors.font,
                       ),
@@ -152,7 +157,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () => Navigator.pushNamed(context, Routes.mainPage),
+              onTap: () async {
+                final response = await Provider.of<Auth>(context, listen: false)
+                    .RegisterUser(
+                        phoneNumber: _phoneController.text.trim(),
+                        password: _passwordController.text.trim());
+
+                if (response == true) {
+                  // ignore: use_build_context_synchronously
+                  Navigator.pushNamed(context, Routes.mainPage);
+                } else {
+                  return;
+                }
+              },
               child: AppButtons(
                 text: 'CREATE AN ACCOUNT',
                 size: double.maxFinite,

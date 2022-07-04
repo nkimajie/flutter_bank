@@ -3,7 +3,8 @@ import 'package:shopping_cart/constant/colors.dart';
 import 'package:shopping_cart/screens/screens.dart';
 
 import 'home_screen.dart';
-import 'navpages/activity.dart';
+// import 'navpages/activity.dart';
+import 'navpages/card.dart';
 import 'navpages/profile.dart';
 
 class MainPage extends StatefulWidget {
@@ -17,8 +18,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List pages = [
     const HomeScreen(),
-    const Card(),
-    const Activity(),
+    const CardScreen(),
+    // const Activity(),
     const Profile(),
   ];
 
@@ -40,8 +41,8 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.white,
         onTap: onTab,
         currentIndex: currentIndex,
-        selectedItemColor: AppColors.mainColor,
-        unselectedItemColor: AppColors.secondaryText,
+        selectedItemColor: AppColors.primary,
+        unselectedItemColor: AppColors.font,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         unselectedFontSize: 10, // to hide label
@@ -55,13 +56,13 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           BottomNavigationBarItem(
-            label: "Card",
+            label: "Transactions",
             icon: Icon(Icons.payment_rounded),
           ),
-          BottomNavigationBarItem(
-            label: "Search",
-            icon: Icon(Icons.line_axis),
-          ),
+          // BottomNavigationBarItem(
+          //   label: "Search",
+          //   icon: Icon(Icons.line_axis),
+          // ),
           BottomNavigationBarItem(
             label: "My",
             icon: Icon(Icons.person_outlined),

@@ -3,11 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 import 'package:shopping_cart/constant/app_asset.dart';
 import 'package:shopping_cart/constant/colors.dart';
 import 'package:shopping_cart/core/navigators/navigators.dart';
 import 'package:shopping_cart/widgets/app_buttons.dart';
 import 'package:shopping_cart/widgets/app_text.dart';
+
+import '../providers/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -17,6 +20,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _phoneController = TextEditingController();
+  final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.maxFinite,
                     height: 50,
                     child: TextFormField(
-                      // controller: addressController,
+                      controller: _phoneController,
                       style: const TextStyle(
                         color: AppColors.font,
                       ),
@@ -120,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.maxFinite,
                     height: 50,
                     child: TextFormField(
-                      // controller: addressController,
+                      controller: _phoneController,
                       style: const TextStyle(
                         color: AppColors.font,
                       ),
@@ -174,7 +179,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () => Navigator.pushNamed(context, Routes.mainPage),
+              onTap: () async {
+                final response = await Provider.of<Auth>(context, listen: false)
+                    .LoginUser(
+                        phoneNumber: _phoneController.text.trim(),
+                        password: _password.text.trim());
+
+                if (response == true) {
+                  // ignore: use_build_context_synchronously
+                  Navigator.pushNamed(context, Routes.mainPage);
+                } else {
+                  return;
+                }
+              },
               child: AppButtons(
                 text: 'LOG IN',
                 size: double.maxFinite,
