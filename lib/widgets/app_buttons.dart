@@ -14,6 +14,7 @@ class AppButtons extends StatelessWidget {
   double height;
   bool isIcon;
   final Color borderColor;
+  final VoidCallback? onTap;
 
   AppButtons({
     Key? key,
@@ -25,46 +26,50 @@ class AppButtons extends StatelessWidget {
     required this.size,
     required this.color,
     required this.backgroundColor,
+    this.onTap,
     this.borderColor = AppColors.primary,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: height,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(width: 0.5, color: borderColor),
-        color: backgroundColor,
-      ),
-      child: isIcon == false
-          ? Center(
-              child: AppTextBold(
-              text: text!,
-              color: color,
-              size: 15,
-              weight: FontWeight.w700,
-            ))
-          : Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  Icon(
-                    icon,
-                    color: iconColor,
-                    size: 31,
-                  ),
-                  const Gap(16),
-                  AppTextBold(
-                    text: text!,
-                    color: color,
-                    size: 15,
-                    weight: FontWeight.w700,
-                  ),
-                ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: size,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(width: 0.5, color: borderColor),
+          color: backgroundColor,
+        ),
+        child: isIcon == false
+            ? Center(
+                child: AppTextBold(
+                text: text!,
+                color: color,
+                size: 15,
+                weight: FontWeight.w700,
+              ))
+            : Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  children: [
+                    Icon(
+                      icon,
+                      color: iconColor,
+                      size: 31,
+                    ),
+                    const Gap(16),
+                    AppTextBold(
+                      text: text!,
+                      color: color,
+                      size: 15,
+                      weight: FontWeight.w700,
+                    ),
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

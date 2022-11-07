@@ -38,10 +38,13 @@ dependencies:
   dio: ^4.0.6
   http: ^0.13.4
   data_connection_checker: ^0.3.4
-  connectivity: ^3.0.6
+  connectivity_plus: ^3.0.2
   http_parser: ^4.0.1
   logger: ^1.1.0
   shared_preferences: ^2.0.15
+
+# dependency_overrides:
+#   connectivity: ^3.0.6
 
 dev_dependencies:
   flutter_test:
