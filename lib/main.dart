@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_cart/providers/auth.dart';
+import 'package:shopping_cart/providers/deposit_provider.dart';
 import 'package:shopping_cart/screens/auth_screen.dart';
 
 import 'core/navigators/navigators.dart';
@@ -25,14 +26,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (ctx) => Auth()),
+        ChangeNotifierProvider(
+          create: (ctx) => Auth(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => DepositProvider(),
+        ),
       ],
       child: Consumer<Auth>(
-          builder: (context, value, child) => MaterialApp(
-                theme: ThemeData.dark(),
-                home: AuthScreen(),
-                onGenerateRoute: generateRoute,
-              )),
+        builder: (context, value, child) => MaterialApp(
+          theme: ThemeData.light(),
+          home: AuthScreen(),
+          onGenerateRoute: generateRoute,
+        ),
+      ),
     );
   }
 }
