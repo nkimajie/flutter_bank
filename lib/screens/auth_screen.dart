@@ -42,16 +42,10 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                     const Gap(45),
                     AppTextBold(
-                      text: 'Welcome to BankMe',
+                      text: 'Welcome to SpaceX',
                       weight: FontWeight.w700,
                       size: 30,
                       color: AppColors.font,
-                    ),
-                    const Gap(12),
-                    AppTextBold(
-                      text: 'The bank for everyone.',
-                      size: 17,
-                      weight: FontWeight.w300,
                     ),
                   ],
                 ),
@@ -66,19 +60,19 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: (() => Navigator.pushNamed(
-                        context,
-                        Routes.register,
-                      )),
-                  child: AppButtons(
-                    text: 'CREATE YOUR FREE ACCOUNT',
-                    size: double.maxFinite,
-                    color: AppColors.white,
-                    backgroundColor: AppColors.primary,
-                  ),
-                ),
-                const Gap(20),
+                // GestureDetector(
+                //   onTap: (() => Navigator.pushNamed(
+                //         context,
+                //         Routes.register,
+                //       )),
+                //   child: AppButtons(
+                //     text: 'CREATE YOUR FREE ACCOUNT',
+                //     size: double.maxFinite,
+                //     color: AppColors.white,
+                //     backgroundColor: AppColors.primary,
+                //   ),
+                // ),
+                // const Gap(20),
                 GestureDetector(
                   onTap: (() => Navigator.pushNamed(
                         context,

@@ -6,9 +6,14 @@ import 'package:shopping_cart/core/navigators/navigators.dart';
 import 'package:shopping_cart/widgets/app_buttons.dart';
 import 'package:shopping_cart/widgets/app_text.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Gap(43),
                 Container(
-                  height: 180,
+                  height: 100,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
                     color: AppColors.primary,
@@ -59,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   child: Center(
                     child: Column(
                       children: [
-                        const Gap(40),
+                        const Gap(10),
                         AppTextBold(
                           text: 'Account Balance',
                           size: 15,
@@ -68,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const Gap(20),
                         AppTextBold(
-                          text: 'N50,000.00',
+                          text: '5000BTC',
                           size: 32,
                           color: AppColors.white,
                           weight: FontWeight.w500,
@@ -92,176 +97,29 @@ class HomeScreen extends StatelessWidget {
                         iconColor: AppColors.secondary,
                       ),
                     ),
-                    const Gap(22),
-                    Expanded(
-                      child: AppButtons(
-                        text: 'Transfer',
-                        size: double.maxFinite,
-                        color: AppColors.font,
-                        backgroundColor: AppColors.withdraw,
-                        borderColor: AppColors.withdraw,
-                        isIcon: true,
-                        icon: Icons.send_to_mobile,
-                        iconColor: AppColors.secondryColor,
-                      ),
-                    ),
+                    // const Gap(22),
+                    // Expanded(
+                    //   child: AppButtons(
+                    //     text: 'Transfer',
+                    //     size: double.maxFinite,
+                    //     color: AppColors.font,
+                    //     backgroundColor: AppColors.withdraw,
+                    //     borderColor: AppColors.withdraw,
+                    //     isIcon: true,
+                    //     icon: Icons.send_to_mobile,
+                    //     iconColor: AppColors.secondryColor,
+                    //   ),
+                    // ),
                   ],
                 ),
                 const Gap(40),
                 AppTextBold(
-                  text: 'Get your money working for you',
+                  text: 'Take A Trip:',
                   size: 17,
                   weight: FontWeight.w700,
                   color: AppColors.font,
                 ),
                 const Gap(20),
-                Container(
-                  width: double.maxFinite,
-                  height: 66,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppColors.font,
-                      width: 0.2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 42,
-                              height: 42,
-                              decoration: BoxDecoration(
-                                color: AppColors.walletContainer,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: const Icon(
-                                Icons.wallet,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                            const Gap(24),
-                            AppTextBold(
-                              text: 'Save for an emergency',
-                              size: 15,
-                              color: AppColors.font,
-                              weight: FontWeight.w300,
-                            ),
-                          ],
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right,
-                          color: AppColors.font,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const Gap(20),
-                Container(
-                  width: double.maxFinite,
-                  height: 66,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppColors.font,
-                      width: 0.2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 42,
-                              height: 42,
-                              decoration: BoxDecoration(
-                                color: AppColors.walletContainer,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: const Icon(
-                                Icons.money_rounded,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                            const Gap(24),
-                            AppTextBold(
-                              text: 'Invest your money',
-                              size: 15,
-                              color: AppColors.font,
-                              weight: FontWeight.w300,
-                            ),
-                          ],
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right,
-                          color: AppColors.font,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const Gap(36),
-                AppTextBold(
-                  text: 'Ways to earn more money',
-                  size: 17,
-                  weight: FontWeight.w700,
-                  color: AppColors.font,
-                ),
-                const Gap(20),
-                Container(
-                  width: double.maxFinite,
-                  height: 66,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppColors.font,
-                      width: 0.2,
-                    ),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              width: 42,
-                              height: 42,
-                              decoration: BoxDecoration(
-                                color: AppColors.walletContainer,
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              child: const Icon(
-                                Icons.money_rounded,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                            const Gap(24),
-                            AppTextBold(
-                              text: 'Invite your friends and get a bonus',
-                              size: 15,
-                              color: AppColors.font,
-                              weight: FontWeight.w300,
-                            ),
-                          ],
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right,
-                          color: AppColors.font,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

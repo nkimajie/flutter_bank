@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_cart/providers/auth.dart';
-import 'package:shopping_cart/screens/screens.dart';
+import 'package:shopping_cart/screens/auth_screen.dart';
 
 import 'core/navigators/navigators.dart';
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<Auth>(
           builder: (context, value, child) => MaterialApp(
                 theme: ThemeData.dark(),
-                home: const SplashScreen(),
+                home: AuthScreen(),
                 onGenerateRoute: generateRoute,
               )),
     );
